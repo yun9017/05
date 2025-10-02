@@ -8,32 +8,24 @@
 #include <stdio.h>
 
 int main(int argc, char * argv[]) {
-    int a,b;
-    char op;
-    int result;
+    int answer = 59;
+    int num;
+    int trial=0;
     
-    printf("Enter the calculation: ");
-    scanf("%i %c %i", &a, &op, &b);
-    
-    switch(op)
+    do
     {
-        case '+':
-            result = a+b;
-            break;
-        case '-':
-            result = a-b;
-            break;
-        case '*':
-            result = a*b;
-            break;
-        case '/':
-            result = a/b;
-            break;
-        default:
-               break;
-    }
+        printf("Input a number: ");
+        scanf("%d", &num);
+        trial++;
         
-    printf("=%i\n", result);
+        if (answer > num)
+            printf("high!\n");
+        else if (answer < num)
+            printf("low!\n");
+    }
+    while(answer != num);
+    
+    printf("Congratulation! trial: %i\n", trial);
     
     return 0;
 }
